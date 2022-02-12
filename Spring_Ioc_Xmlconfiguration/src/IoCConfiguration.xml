@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+  <bean id="customerDal" class="DataAccess.OracleCustomerDal"> </bean>
+
+ 
+  <bean id="customerService" class="Services.CustomerManager">
+  	<constructor-arg ref="customerDal"/>
+ </bean>
+ 
+ 
+<!--  <bean id="customerService" class="Services.CustomerManager2"> -->
+<!-- 	  <property name="customerDal" ref="customerDal" /> -->
+<!-- <!-- 	<constructor-arg ref="customerDal"/> --> -->
+<!--  </bean> -->
+</beans>
